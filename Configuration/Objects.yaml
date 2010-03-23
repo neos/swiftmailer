@@ -1,0 +1,12 @@
+F3\SwiftMailer\TransportInterface:
+  factoryObjectName: F3\SwiftMailer\TransportFactory
+  arguments:
+    1:
+      setting: SwiftMailer.transport.type
+    2:
+      setting: SwiftMailer.transport.options
+
+F3\SwiftMailer\Mailer:
+  arguments:
+    1:
+      object: F3\SwiftMailer\TransportInterface

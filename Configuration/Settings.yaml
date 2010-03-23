@@ -1,0 +1,4 @@
+SwiftMailer:
+  transport:
+    type: 'Swift_MailTransport'
+    options: []

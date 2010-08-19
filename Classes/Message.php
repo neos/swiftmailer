@@ -27,7 +27,6 @@ require_once(__DIR__ . '/../Resources/Private/PHP/SwiftMailer/swift_required.php
 /**
  * Message class for the SwiftMailer package
  *
- * @version $Id$
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License', version 3 or later
  * @scope prototype
  */
@@ -35,7 +34,7 @@ class Message extends \Swift_Message {
 
 	/**
 	 * @inject
-	 * @var \F3\SwiftMailer\Mailer
+	 * @var \F3\SwiftMailer\MailerInterface
 	 */
 	var $mailer;
 

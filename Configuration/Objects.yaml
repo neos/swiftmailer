@@ -6,7 +6,7 @@ F3\SwiftMailer\TransportInterface:
     2:
       setting: SwiftMailer.transport.options
 
-F3\SwiftMailer\Mailer:
+F3\SwiftMailer\MailerInterface:
   arguments:
     1:
       object: F3\SwiftMailer\TransportInterface

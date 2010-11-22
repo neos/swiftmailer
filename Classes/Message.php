@@ -49,7 +49,7 @@ class Message extends \Swift_Message {
 	 * @var array
 	 */
 	var $failedRecipients = array();
-	
+
 	/**
 	 * Sends the message.
 	 *
@@ -58,7 +58,8 @@ class Message extends \Swift_Message {
 	 */
 	public function send() {
 		$this->sent = TRUE;
-		return $this->mailer->send($this, &$this->failedRecipients);
+		$this->failedRecipients = array();
+		return $this->mailer->send($this, $this->failedRecipients);
 	}
 
 	/**
@@ -78,7 +79,7 @@ class Message extends \Swift_Message {
 	 * @author Karsten Dambekalns <karsten@typo3.org>
 	 */
 	public function getFailedRecipients() {
-		return $this->mailer->send($this, &$this->failedRecipients);
+		return $this->failedRecipients;
 	}
 
 }

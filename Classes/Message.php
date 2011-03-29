@@ -81,5 +81,4 @@ class Message extends \Swift_Message {
 	}
 
 }
-
 ?>

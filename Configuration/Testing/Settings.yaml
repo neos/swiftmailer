@@ -1,0 +1,4 @@
+SwiftMailer:
+  transport:
+    type: 'F3\SwiftMailer\Transport\LoggingTransport'
+    options: []

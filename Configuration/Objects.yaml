@@ -1,4 +1,5 @@
 F3\SwiftMailer\TransportInterface:
+  scope: prototype
   factoryObjectName: F3\SwiftMailer\TransportFactory
   arguments:
     1:

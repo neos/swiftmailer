@@ -22,13 +22,10 @@ namespace F3\SwiftMailer;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-require_once(__DIR__ . '/../Resources/Private/PHP/SwiftMailer/swift_required.php');
-
 /**
  * Transport interface for the SwiftMailer package
  *
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License', version 3 or later
- * @scope prototype
  */
 interface TransportInterface extends \Swift_Transport {
 }

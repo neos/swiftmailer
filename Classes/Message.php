@@ -22,8 +22,6 @@ namespace F3\SwiftMailer;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-require_once(__DIR__ . '/../Resources/Private/PHP/SwiftMailer/swift_required.php');
-
 /**
  * Message class for the SwiftMailer package
  *

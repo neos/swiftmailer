@@ -26,7 +26,6 @@ namespace F3\SwiftMailer;
  * Mailer interface for the SwiftMailer package
  *
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License', version 3 or later
- * @scope prototype
  */
 interface MailerInterface {
 }

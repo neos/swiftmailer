@@ -3,7 +3,7 @@ declare(ENCODING = 'utf-8');
 namespace F3\SwiftMailer;
 
 /*                                                                        *
- * This script belongs to the FLOW3 package "SwiftMailer".                *
+ * This script belongs to the FLOW3 framework.                            *
  *                                                                        *
  * It is free software; you can redistribute it and/or modify it under    *
  * the terms of the GNU Lesser General Public License as published by the *
@@ -22,12 +22,25 @@ namespace F3\SwiftMailer;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
+use \F3\FLOW3\Package\Package as BasePackage;
+
 /**
- * Mailer class for the SwiftMailer package
+ * The SwiftMailer Package
  *
- * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License', version 3 or later
+ * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
-class Mailer extends \Swift_Mailer implements \F3\SwiftMailer\MailerInterface {
+class Package extends BasePackage {
+
+	/**
+	 * Invokes custom PHP code directly after the package manager has been initialized.
+	 *
+	 * @param \F3\FLOW3\Core\Bootstrap $bootstrap The current bootstrap
+	 * @return void
+	 */
+	public function boot(\F3\FLOW3\Core\Bootstrap $bootstrap) {
+		require(__DIR__ . '/../Resources/Private/PHP/SwiftMailer/swift_required.php');
+	}
+
 }
 
 ?>

@@ -2,3 +2,17 @@ SwiftMailer:
   transport:
     type: 'Swift_MailTransport'
     options: []
+
+# Example settings for sending emails via SMTP / SSL:
+#
+# SwiftMailer:
+#   transport:
+#     type: 'Swift_SmtpTransport'
+#     options:
+#       host: 'smtp.example.com'
+#       port: '465'
+#       username: 'myaccount@example.com'
+#       password: '5js9j1lkjs8'
+#       encryption: 'ssl'
+#       localDomain: 'example.com'
+

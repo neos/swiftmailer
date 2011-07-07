@@ -1,13 +1,13 @@
-F3\SwiftMailer\TransportInterface:
+TYPO3\SwiftMailer\TransportInterface:
   scope: prototype
-  factoryObjectName: F3\SwiftMailer\TransportFactory
+  factoryObjectName: TYPO3\SwiftMailer\TransportFactory
   arguments:
     1:
-      setting: SwiftMailer.transport.type
+      setting: TYPO3.SwiftMailer.transport.type
     2:
-      setting: SwiftMailer.transport.options
+      setting: TYPO3.SwiftMailer.transport.options
 
-F3\SwiftMailer\MailerInterface:
+TYPO3\SwiftMailer\MailerInterface:
   arguments:
     1:
-      object: F3\SwiftMailer\TransportInterface
+      object: TYPO3\SwiftMailer\TransportInterface

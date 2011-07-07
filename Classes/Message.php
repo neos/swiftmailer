@@ -1,5 +1,5 @@
 <?php
-namespace F3\SwiftMailer;
+namespace TYPO3\SwiftMailer;
 
 /*                                                                        *
  * This script belongs to the FLOW3 package "SwiftMailer".                *
@@ -31,7 +31,7 @@ class Message extends \Swift_Message {
 
 	/**
 	 * @inject
-	 * @var \F3\SwiftMailer\MailerInterface
+	 * @var \TYPO3\SwiftMailer\MailerInterface
 	 */
 	protected $mailer;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://typo3.org/ns/2008/flow3/package" version="1.0">
-	<key>SwiftMailer</key>
+	<key>TYPO3.SwiftMailer</key>
 	<title>Swift Mailer for FLOW3</title>
 	<description/>
 	<version>4.0.6</version>

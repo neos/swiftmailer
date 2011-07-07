@@ -1,5 +1,5 @@
 <?php
-namespace F3\SwiftMailer;
+namespace TYPO3\SwiftMailer;
 
 /*                                                                        *
  * This script belongs to the FLOW3 package "SwiftMailer".                *
@@ -26,7 +26,7 @@ namespace F3\SwiftMailer;
  *
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License', version 3 or later
  */
-class Mailer extends \Swift_Mailer implements \F3\SwiftMailer\MailerInterface {
+class Mailer extends \Swift_Mailer implements \TYPO3\SwiftMailer\MailerInterface {
 }
 
 ?>

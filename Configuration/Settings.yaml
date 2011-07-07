@@ -1,7 +1,8 @@
-SwiftMailer:
-  transport:
-    type: 'Swift_MailTransport'
-    options: []
+TYPO3:
+  SwiftMailer:
+    transport:
+      type: 'Swift_MailTransport'
+      options: []
 
 # Example settings for sending emails via SMTP / SSL:
 #

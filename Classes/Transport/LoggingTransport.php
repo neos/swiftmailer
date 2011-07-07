@@ -1,5 +1,5 @@
 <?php
-namespace F3\SwiftMailer\Transport;
+namespace TYPO3\SwiftMailer\Transport;
 
 /*                                                                        *
  * This script belongs to the FLOW3 package "SwiftMailer".                *
@@ -26,7 +26,7 @@ namespace F3\SwiftMailer\Transport;
  *
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License', version 3 or later
  */
-class LoggingTransport implements \F3\SwiftMailer\TransportInterface {
+class LoggingTransport implements \TYPO3\SwiftMailer\TransportInterface {
 
 	/**
 	 * Store sent messages for testing
@@ -37,7 +37,7 @@ class LoggingTransport implements \F3\SwiftMailer\TransportInterface {
 
 	/**
 	 * @inject
-	 * @var \F3\FLOW3\Log\SystemLoggerInterface
+	 * @var \TYPO3\FLOW3\Log\SystemLoggerInterface
 	 */
 	protected $systemLogger;
 

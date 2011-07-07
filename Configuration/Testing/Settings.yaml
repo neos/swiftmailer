@@ -1,4 +1,5 @@
-SwiftMailer:
-  transport:
-    type: 'F3\SwiftMailer\Transport\LoggingTransport'
-    options: []
+TYPO3:
+  SwiftMailer:
+    transport:
+      type: 'TYPO3\SwiftMailer\Transport\LoggingTransport'
+      options: []

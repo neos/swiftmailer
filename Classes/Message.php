@@ -21,16 +21,18 @@ namespace TYPO3\SwiftMailer;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
+use TYPO3\FLOW3\Annotations as FLOW3;
+
 /**
  * Message class for the SwiftMailer package
  *
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License', version 3 or later
- * @scope prototype
+ * @FLOW3\Scope("prototype")
  */
 class Message extends \Swift_Message {
 
 	/**
-	 * @inject
+	 * @FLOW3\Inject
 	 * @var \TYPO3\SwiftMailer\MailerInterface
 	 */
 	protected $mailer;

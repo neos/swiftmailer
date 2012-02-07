@@ -5,18 +5,8 @@ namespace TYPO3\SwiftMailer;
  * This script belongs to the FLOW3 package "SwiftMailer".                *
  *                                                                        *
  * It is free software; you can redistribute it and/or modify it under    *
- * the terms of the GNU Lesser General Public License as published by the *
- * Free Software Foundation, either version 3 of the License, or (at your *
- * option) any later version.                                             *
- *                                                                        *
- * This script is distributed in the hope that it will be useful, but     *
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHAN-    *
- * TABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser       *
- * General Public License for more details.                               *
- *                                                                        *
- * You should have received a copy of the GNU Lesser General Public       *
- * License along with the script.                                         *
- * If not, see http://www.gnu.org/licenses/lgpl.html                      *
+ * the terms of the GNU Lesser General Public License, either version 3   *
+ *  of the License, or (at your option) any later version.                *
  *                                                                        *
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
@@ -26,7 +16,6 @@ use TYPO3\FLOW3\Annotations as FLOW3;
 /**
  * Message class for the SwiftMailer package
  *
- * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License', version 3 or later
  * @FLOW3\Scope("prototype")
  */
 class Message extends \Swift_Message {
@@ -53,7 +42,6 @@ class Message extends \Swift_Message {
 	 * Sends the message.
 	 *
 	 * @return integer the number of recipients who were accepted for delivery
-	 * @author Karsten Dambekalns <karsten@typo3.org>
 	 */
 	public function send() {
 		$this->sent = TRUE;
@@ -65,7 +53,6 @@ class Message extends \Swift_Message {
 	 * Checks whether the message has been sent.
 	 *
 	 * @return boolean
-	 * @author Karsten Dambekalns <karsten@typo3.org>
 	 */
 	public function isSent() {
 		return $this->sent;
@@ -75,7 +62,6 @@ class Message extends \Swift_Message {
 	 * Returns the recipients for which the mail was not accepted for delivery.
 	 *
 	 * @return array the recipients who were not accepted for delivery
-	 * @author Karsten Dambekalns <karsten@typo3.org>
 	 */
 	public function getFailedRecipients() {
 		return $this->failedRecipients;

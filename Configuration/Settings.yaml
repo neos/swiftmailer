@@ -17,3 +17,11 @@ TYPO3:
 #       encryption: 'ssl'
 #       localDomain: 'example.com'
 
+# Example settings for "sending" emails to an mbox file:
+#
+# SwiftMailer:
+#   transport:
+#     type: 'TYPO3\SwiftMailer\Transport\MboxTransport'
+#     options:
+#       mboxPathAndFilename: '%FLOW3_PATH_DATA%/Persistent/sent-mail'
+

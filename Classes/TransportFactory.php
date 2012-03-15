@@ -31,7 +31,9 @@ class TransportFactory {
 
 		foreach ($backendOptions as $optionName => $optionValue) {
 			$setterName = 'set' . ucfirst($optionName);
-			$transport->$setterName($optionValue);
+			if (method_exists($transport, $setterName)) {
+				$transport->$setterName($optionValue);
+			}
 		}
 
 		return $transport;

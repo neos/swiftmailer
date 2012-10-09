@@ -11,7 +11,7 @@ namespace TYPO3\SwiftMailer\Transport;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * A logging swift transport for functional tests and development. It stores and logs sent messages.
@@ -26,8 +26,8 @@ class LoggingTransport implements \TYPO3\SwiftMailer\TransportInterface {
 	static protected $deliveredMessages = array();
 
 	/**
-	 * @FLOW3\Inject
-	 * @var \TYPO3\FLOW3\Log\SystemLoggerInterface
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Log\SystemLoggerInterface
 	 */
 	protected $systemLogger;
 

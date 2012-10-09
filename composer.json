@@ -1,1 +1,14 @@
-{"name":"typo3\/swiftmailer","type":"typo3-flow-package","description":"","version":"4.1.5","require":{"typo3\/flow":"*"},"autoload":{"psr-0":{"TYPO3\\SwiftMailer":"Classes"}}}
+{
+	"name":"typo3/swiftmailer",
+	"type":"typo3-flow-package",
+	"description":"",
+	"version":"4.1.5",
+	"require": {
+		"typo3/flow":"*"
+	},
+	"autoload": {
+		"psr-0": {
+			"TYPO3\\SwiftMailer":"Classes"
+		}
+	}
+}

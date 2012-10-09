@@ -23,5 +23,5 @@ TYPO3:
 #   transport:
 #     type: 'TYPO3\SwiftMailer\Transport\MboxTransport'
 #     options:
-#       mboxPathAndFilename: '%FLOW3_PATH_DATA%/Persistent/sent-mail'
+#       mboxPathAndFilename: '%FLOW_PATH_DATA%/Persistent/sent-mail'
 

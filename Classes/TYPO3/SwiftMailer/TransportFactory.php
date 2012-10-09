@@ -30,8 +30,8 @@ class TransportFactory {
 		$transport = new $backend();
 
 		foreach ($backendOptions as $optionName => $optionValue) {
-			if (\TYPO3\FLOW3\Reflection\ObjectAccess::isPropertySettable($transport, $optionName)) {
-				\TYPO3\FLOW3\Reflection\ObjectAccess::setProperty($transport, $optionName, $optionValue);
+			if (\TYPO3\Flow\Reflection\ObjectAccess::isPropertySettable($transport, $optionName)) {
+				\TYPO3\Flow\Reflection\ObjectAccess::setProperty($transport, $optionName, $optionValue);
 			}
 		}
 

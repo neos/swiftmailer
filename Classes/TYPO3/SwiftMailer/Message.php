@@ -11,17 +11,17 @@ namespace TYPO3\SwiftMailer;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Message class for the SwiftMailer package
  *
- * @FLOW3\Scope("prototype")
+ * @Flow\Scope("prototype")
  */
 class Message extends \Swift_Message {
 
 	/**
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 * @var \TYPO3\SwiftMailer\MailerInterface
 	 */
 	protected $mailer;

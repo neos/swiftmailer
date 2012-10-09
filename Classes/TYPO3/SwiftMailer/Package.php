@@ -25,7 +25,7 @@ class Package extends BasePackage {
 	 * @return void
 	 */
 	public function boot(\TYPO3\Flow\Core\Bootstrap $bootstrap) {
-		require(__DIR__ . '/../Resources/Private/PHP/SwiftMailer/swift_required.php');
+		require(__DIR__ . '/../../../Resources/Private/PHP/SwiftMailer/swift_required.php');
 	}
 
 }

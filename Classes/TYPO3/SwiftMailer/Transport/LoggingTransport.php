@@ -65,11 +65,29 @@ class LoggingTransport implements \TYPO3\SwiftMailer\TransportInterface {
 	public function send(\Swift_Mime_Message $message, &$failedRecipients = NULL) {
 		self::$deliveredMessages[] = $message;
 
-		$this->systemLogger->log('Sent email to ' . $message->getTo(), LOG_DEBUG, array(
+		$this->systemLogger->log('Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()), LOG_DEBUG, array(
 			'message' => $message->toString()
 		));
 
 		return count((array)$message->getTo()) + count((array)$message->getCc()) + count((array)$message->getBcc());
+	}
+
+	/**
+	 * Builds a plaintext-compatible string representing an array of given E-Mail addresses.
+	 *
+	 * @param array $addresses The addresses where the key is the email address and the value is a name
+	 * @return string Looking like "John Doe <demo@example.org>, Jeanne Dough <foo@example.org>, somebody@example.org"
+	 */
+	protected function buildStringFromEmailAndNameArray(array $addresses) {
+		$results = array();
+		foreach ($addresses as $emailAddress => $name) {
+			if (strlen($name) > 0) {
+				$results[] = sprintf('%s <%s>', $name, $emailAddress);
+			} else {
+				$results[] = $emailAddress;
+			}
+		}
+		return implode(', ', $results);
 	}
 
 	/**

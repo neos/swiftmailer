@@ -6,6 +6,8 @@ TYPO3\SwiftMailer\TransportInterface:
       setting: TYPO3.SwiftMailer.transport.type
     2:
       setting: TYPO3.SwiftMailer.transport.options
+    3:
+      setting: TYPO3.SwiftMailer.transport.arguments
 
 TYPO3\SwiftMailer\MailerInterface:
   arguments:

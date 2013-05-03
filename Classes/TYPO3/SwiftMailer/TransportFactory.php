@@ -11,6 +11,8 @@ namespace TYPO3\SwiftMailer;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
+use TYPO3\Flow\Reflection\ObjectAccess;
+
 /**
  * Transport factory for the SwiftMailer package
  */
@@ -19,19 +21,27 @@ class TransportFactory {
 	/**
 	 * Factory method which creates the specified transport with the given options.
 	 *
-	 * @param string $backend Object name of the transport to create
-	 * @param array $backendOptions Options for the backend
+	 * @param string $transportType Object name of the transport to create
+	 * @param array $transportOptions Options for the transport
+	 * @param array $transportArguments Constructor arguments for the transport
 	 * @return \TYPO3\SwiftMailer\TransportInterface The created transport instance
+	 * @throws Exception
 	 */
-	public function create($backend, array $backendOptions = array()) {
-		if (!class_exists($backend)) {
-			throw new \TYPO3\SwiftMailer\Exception('The specified transport backend "' . $backend . '" does not exist.', 1269351207);
+	public function create($transportType, array $transportOptions = array(), array $transportArguments = NULL) {
+		if (!class_exists($transportType)) {
+			throw new Exception('The specified transport backend "' . $transportType . '" does not exist.', 1269351207);
 		}
-		$transport = new $backend();
 
-		foreach ($backendOptions as $optionName => $optionValue) {
-			if (\TYPO3\Flow\Reflection\ObjectAccess::isPropertySettable($transport, $optionName)) {
-				\TYPO3\Flow\Reflection\ObjectAccess::setProperty($transport, $optionName, $optionValue);
+		if (is_array($transportArguments)) {
+			$class = new \ReflectionClass($transportType);
+			$transport =  $class->newInstanceArgs($transportArguments);
+		} else {
+			$transport = new $transportType();
+		}
+
+		foreach ($transportOptions as $optionName => $optionValue) {
+			if (ObjectAccess::isPropertySettable($transport, $optionName)) {
+				ObjectAccess::setProperty($transport, $optionName, $optionValue);
 			}
 		}
 

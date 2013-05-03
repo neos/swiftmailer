@@ -2,6 +2,7 @@ TYPO3:
   SwiftMailer:
     transport:
       type: 'Swift_MailTransport'
+      arguments: ~
       options: []
 
 # Example settings for sending emails via SMTP / SSL:

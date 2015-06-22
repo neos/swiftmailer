@@ -2,7 +2,7 @@
 namespace TYPO3\SwiftMailer\Transport;
 
 /*                                                                        *
- * This script belongs to the FLOW3 package "SwiftMailer".                *
+ * This script belongs to the Flow package "SwiftMailer".                 *
  *                                                                        *
  * It is free software; you can redistribute it and/or modify it under    *
  * the terms of the GNU Lesser General Public License, either version 3   *
@@ -12,13 +12,14 @@ namespace TYPO3\SwiftMailer\Transport;
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\SwiftMailer\TransportInterface;
 
 /**
  * A swift transport that delivers to a text file according to RFC 4155.
  *
  * Originally written by Ernesto Baschny <ernst@cron-it.de>
  */
-class MboxTransport implements \TYPO3\SwiftMailer\TransportInterface {
+class MboxTransport implements TransportInterface {
 
 	/**
 	 * @var string The file to write the mails into
@@ -115,4 +116,3 @@ class MboxTransport implements \TYPO3\SwiftMailer\TransportInterface {
 	public function registerPlugin(\Swift_Events_EventListener $plugin) {}
 
 }
-?>

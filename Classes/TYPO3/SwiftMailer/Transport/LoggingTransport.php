@@ -2,7 +2,7 @@
 namespace TYPO3\SwiftMailer\Transport;
 
 /*                                                                        *
- * This script belongs to the FLOW3 package "SwiftMailer".                *
+ * This script belongs to the Flow package "SwiftMailer".                 *
  *                                                                        *
  * It is free software; you can redistribute it and/or modify it under    *
  * the terms of the GNU Lesser General Public License, either version 3   *
@@ -12,11 +12,12 @@ namespace TYPO3\SwiftMailer\Transport;
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\SwiftMailer\TransportInterface;
 
 /**
  * A logging swift transport for functional tests and development. It stores and logs sent messages.
  */
-class LoggingTransport implements \TYPO3\SwiftMailer\TransportInterface {
+class LoggingTransport implements TransportInterface {
 
 	/**
 	 * Store sent messages for testing
@@ -117,4 +118,3 @@ class LoggingTransport implements \TYPO3\SwiftMailer\TransportInterface {
 	}
 
 }
-?>

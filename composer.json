@@ -4,7 +4,7 @@
     "description": "A Flow package for easy use of Swift Mailer",
     "license": ["LGPL-3.0", "MIT"],
     "require": {
-        "typo3/flow": "~2.0",
+        "typo3/flow": "~2.0||~3.0",
         "swiftmailer/swiftmailer": "5.4.1"
     },
     "autoload": {

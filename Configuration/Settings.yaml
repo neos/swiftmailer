@@ -12,7 +12,7 @@ TYPO3:
 #     type: 'Swift_SmtpTransport'
 #     options:
 #       host: 'smtp.example.com'
-#       port: '465'
+#       port: 465
 #       username: 'myaccount@example.com'
 #       password: '5js9j1lkjs8'
 #       encryption: 'ssl'

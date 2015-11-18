@@ -15,7 +15,6 @@ TYPO3:
 #       port: 465
 #       username: 'myaccount@example.com'
 #       password: '5js9j1lkjs8'
-#       encryption: 'ssl'
 #       localDomain: 'example.com'
 
 # Example settings for "sending" emails to an mbox file:

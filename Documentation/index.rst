@@ -30,7 +30,6 @@ function. To use SMTP for sending, follow the following example:
           port: '465'
           username: 'myaccount@example.com'
           password: 'shoobidoo'
-          encryption: 'ssl'
           localDomain: 'example.com'
 
 Further transports are available with Swift Mailer and can be used as well. Their options can

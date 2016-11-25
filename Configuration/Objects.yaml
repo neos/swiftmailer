@@ -1,15 +1,15 @@
-TYPO3\SwiftMailer\TransportInterface:
+Neos\SwiftMailer\TransportInterface:
   scope: prototype
-  factoryObjectName: TYPO3\SwiftMailer\TransportFactory
+  factoryObjectName: Neos\SwiftMailer\TransportFactory
   arguments:
     1:
-      setting: TYPO3.SwiftMailer.transport.type
+      setting: Neos.SwiftMailer.transport.type
     2:
-      setting: TYPO3.SwiftMailer.transport.options
+      setting: Neos.SwiftMailer.transport.options
     3:
-      setting: TYPO3.SwiftMailer.transport.arguments
+      setting: Neos.SwiftMailer.transport.arguments
 
-TYPO3\SwiftMailer\MailerInterface:
+Neos\SwiftMailer\MailerInterface:
   arguments:
     1:
-      object: TYPO3\SwiftMailer\TransportInterface
+      object: Neos\SwiftMailer\TransportInterface

@@ -41,7 +41,7 @@ Sending mail
 
 If a transport is configured, sending mail is as simple as this:
 
-* create new ``TYPO3\SwiftMailer\Message`` instance
+* create new ``Neos\SwiftMailer\Message`` instance
 * set your sender address with ``setFrom()``
 * set a subject line with ``setSubject()``
 * set recipients with ``setTo()``, ``setCc()``, ``setBcc()``
@@ -53,7 +53,7 @@ Here is an example:
 
 .. code-block:: php
 
-  	$mail = new \TYPO3\SwiftMailer\Message();
+  	$mail = new \Neos\SwiftMailer\Message();
 
   	$mail
   		->setFrom(array($senderAddress => $senderName))
@@ -75,10 +75,10 @@ sub-context on a staging server), it can be safely committed to a VCS:
 
 .. code-block:: yaml
 
-  TYPO3:
+  Neos:
     SwiftMailer:
       transport:
-        type: 'TYPO3\SwiftMailer\Transport\MboxTransport'
+        type: 'Neos\SwiftMailer\Transport\MboxTransport'
         options:
           mboxPathAndFilename: '%FLOW_PATH_DATA%/Persistent/sent-mail'
 
@@ -90,7 +90,7 @@ of Flow:
 
 .. code-block:: yaml
 
-  TYPO3:
+  Neos:
     SwiftMailer:
       transport:
-        type: 'TYPO3\SwiftMailer\Transport\LoggingTransport'
+        type: 'Neos\SwiftMailer\Transport\LoggingTransport'

@@ -1,18 +1,18 @@
 <?php
-namespace TYPO3\SwiftMailer\Transport;
+namespace Neos\SwiftMailer\Transport;
 
-/*                                                                        *
- * This script belongs to the Flow package "SwiftMailer".                 *
- *                                                                        *
- * It is free software; you can redistribute it and/or modify it under    *
- * the terms of the GNU Lesser General Public License, either version 3   *
- * of the License, or (at your option) any later version.                 *
- *                                                                        *
- * The TYPO3 project - inspiring people to share!                         *
- *                                                                        */
+/*
+ * This file is part of the Neos.SwiftMailer package.
+ *
+ * (c) Contributors of the Neos Project - www.neos.io
+ *
+ * This package is Open Source Software. For the full copyright and license
+ * information, please view the LICENSE file which was distributed with this
+ * source code.
+ */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\SwiftMailer\TransportInterface;
+use Neos\Flow\Annotations as Flow;
+use Neos\SwiftMailer\TransportInterface;
 
 /**
  * A swift transport that delivers to a text file according to RFC 4155.
@@ -41,7 +41,7 @@ class MboxTransport implements TransportInterface {
 	 * @return boolean Always TRUE for this transport
 	 */
 	public function isStarted() {
-		return TRUE;
+		return true;
 	}
 
 	/**
@@ -65,7 +65,7 @@ class MboxTransport implements TransportInterface {
 	 * @param array &$failedRecipients Failed recipients (no failures in this transport)
 	 * @return integer
 	 */
-	public function send(\Swift_Mime_Message $message, &$failedRecipients = NULL) {
+	public function send(\Swift_Mime_Message $message, &$failedRecipients = null) {
 		$message->generateId();
 
 			// Create a mbox-like header
@@ -94,7 +94,7 @@ class MboxTransport implements TransportInterface {
 		$returnPath = $message->getReturnPath();
 		$sender = $message->getSender();
 		$from = $message->getFrom();
-		$path = NULL;
+		$path = null;
 		if (!empty($returnPath)) {
 			$path = $returnPath;
 		} elseif (!empty($sender)) {

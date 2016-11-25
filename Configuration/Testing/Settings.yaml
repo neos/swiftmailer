@@ -1,5 +1,5 @@
-TYPO3:
+Neos:
   SwiftMailer:
     transport:
-      type: 'TYPO3\SwiftMailer\Transport\LoggingTransport'
+      type: 'Neos\SwiftMailer\Transport\LoggingTransport'
       options: []

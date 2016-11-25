@@ -1,4 +1,4 @@
-TYPO3:
+Neos:
   SwiftMailer:
     transport:
       type: 'Swift_MailTransport'
@@ -21,7 +21,7 @@ TYPO3:
 #
 # SwiftMailer:
 #   transport:
-#     type: 'TYPO3\SwiftMailer\Transport\MboxTransport'
+#     type: 'Neos\SwiftMailer\Transport\MboxTransport'
 #     options:
 #       mboxPathAndFilename: '%FLOW_PATH_DATA%/Persistent/sent-mail'
 

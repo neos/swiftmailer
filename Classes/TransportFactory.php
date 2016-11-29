@@ -11,7 +11,7 @@ namespace Neos\SwiftMailer;
  * source code.
  */
 
-use Neos\Flow\Reflection\ObjectAccess;
+use Neos\Utility\ObjectAccess;
 
 /**
  * Transport factory for the SwiftMailer package

@@ -2,7 +2,10 @@
     "name": "neos/swiftmailer",
     "type": "neos-package",
     "description": "A Flow package for easy use of Swift Mailer",
-    "license": ["LGPL-3.0", "MIT"],
+    "license": [
+        "LGPL-3.0",
+        "MIT"
+    ],
     "require": {
         "neos/flow": "^4.0 || dev-master",
         "swiftmailer/swiftmailer": "5.4.1"
@@ -11,5 +14,12 @@
         "psr-4": {
             "Neos\\SwiftMailer\\": "Classes"
         }
+    },
+    "extra": {
+        "applied-flow-migrations": [
+            "TYPO3.Flow-201209251426",
+            "TYPO3.FLOW3-201209201112",
+            "TYPO3.FLOW3-201201261636"
+        ]
     }
 }

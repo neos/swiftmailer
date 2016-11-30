@@ -1,4 +1,5 @@
 <?php
+
 namespace Neos\Flow\Core\Migrations;
 
 /*
@@ -12,11 +13,10 @@ namespace Neos\Flow\Core\Migrations;
  */
 
 /**
- * Adjusts code to package renaming from "TYPO3.SwiftMailer" to "Neos.SwiftMailer"
+ * Adjusts code to package renaming from "TYPO3.SwiftMailer" to "Neos.SwiftMailer".
  */
 class Version20161130105617 extends AbstractMigration
 {
-
     public function getIdentifier()
     {
         return 'Neos.SwiftMailer-20161130105617';

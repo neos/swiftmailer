@@ -8,7 +8,7 @@
     ],
     "require": {
         "neos/flow": "^4.0 || dev-master",
-        "swiftmailer/swiftmailer": "5.4.1"
+        "swiftmailer/swiftmailer": "~5.4.5"
     },
     "autoload": {
         "psr-4": {

@@ -6,6 +6,7 @@ TYPO3:
       options: []
 
 # Example settings for sending emails via SMTP / SSL:
+# Encryption can be set to either tls or ssl
 #
 # SwiftMailer:
 #   transport:
@@ -13,6 +14,7 @@ TYPO3:
 #     options:
 #       host: 'smtp.example.com'
 #       port: 465
+#       encryption: 'ssl'
 #       username: 'myaccount@example.com'
 #       password: '5js9j1lkjs8'
 #       localDomain: 'example.com'

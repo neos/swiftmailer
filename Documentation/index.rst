@@ -28,9 +28,12 @@ function. To use SMTP for sending, follow the following example:
         options:
           host: 'smtp.example.com'
           port: '465'
+          encryption: 'ssl'
           username: 'myaccount@example.com'
           password: 'shoobidoo'
           localDomain: 'example.com'
+
+The encryption property supports values ``ssl`` and ``tls``.
 
 Further transports are available with Swift Mailer and can be used as well. Their options can
 be looked up the Swift Mailer documentation and they can be set by extrapolating from their

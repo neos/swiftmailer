@@ -10,7 +10,7 @@ Installation
 
 The package can be installed via composer::
 
-  composer require typo3/swiftmailer
+  composer require neos/swiftmailer
 
 Configuration
 -------------
@@ -21,7 +21,7 @@ function. To use SMTP for sending, follow the following example:
 
 .. code-block:: yaml
 
-  TYPO3:
+  Neos:
     SwiftMailer:
       transport:
         type: 'Swift_SmtpTransport'

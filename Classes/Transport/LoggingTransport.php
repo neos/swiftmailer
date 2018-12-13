@@ -27,7 +27,7 @@ class LoggingTransport implements TransportInterface
      *
      * @var array
      */
-    static protected $deliveredMessages = [];
+    protected static $deliveredMessages = [];
 
     /**
      * @Flow\Inject

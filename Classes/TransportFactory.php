@@ -56,5 +56,4 @@ class TransportFactory
 
         throw new Exception(sprintf('The specified transport backend "%s" does not implement %s.', $transportType, TransportInterface::class), 1544727431);
     }
-
 }

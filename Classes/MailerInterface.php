@@ -50,5 +50,4 @@ interface MailerInterface
      * @return \Swift_Transport
      */
     public function getTransport(): \Swift_Transport;
-
 }

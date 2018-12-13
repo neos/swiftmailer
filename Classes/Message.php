@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Neos\SwiftMailer;
 
 /*
@@ -20,7 +23,6 @@ use Neos\Flow\Annotations as Flow;
  */
 class Message extends \Swift_Message
 {
-
     /**
      * @Flow\Inject
      * @var \Neos\SwiftMailer\MailerInterface
@@ -29,34 +31,36 @@ class Message extends \Swift_Message
 
     /**
      * True if the message has been sent.
-     * @var boolean
+     *
+     * @var bool
      */
     protected $sent = false;
 
     /**
      * Holds the failed recipients after the message has been sent
+     *
      * @var array
      */
-    protected $failedRecipients = array();
+    protected $failedRecipients = [];
 
     /**
      * Sends the message.
      *
-     * @return integer the number of recipients who were accepted for delivery
+     * @return int the number of recipients who were accepted for delivery
      */
-    public function send()
+    public function send(): int
     {
         $this->sent = true;
-        $this->failedRecipients = array();
+        $this->failedRecipients = [];
         return $this->mailer->send($this, $this->failedRecipients);
     }
 
     /**
      * Checks whether the message has been sent.
      *
-     * @return boolean
+     * @return bool
      */
-    public function isSent()
+    public function isSent(): bool
     {
         return $this->sent;
     }
@@ -66,7 +70,7 @@ class Message extends \Swift_Message
      *
      * @return array the recipients who were not accepted for delivery
      */
-    public function getFailedRecipients()
+    public function getFailedRecipients(): array
     {
         return $this->failedRecipients;
     }

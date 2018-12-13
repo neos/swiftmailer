@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Neos\SwiftMailer;
 
 /*
@@ -16,7 +19,6 @@ namespace Neos\SwiftMailer;
  */
 interface MailerInterface
 {
-
     /**
      * Send the given Message like it would be sent in a mail client.
      *
@@ -28,24 +30,25 @@ interface MailerInterface
      * The return value is the number of recipients who were accepted for
      * delivery.
      *
-     * @param \Swift_Mime_Message $message
+     * @param \Swift_Mime_SimpleMessage $message
      * @param array $failedRecipients An array of failures by-reference
      * @return int
      */
-    public function send(\Swift_Mime_Message $message, &$failedRecipients = null);
+    public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null);
 
     /**
      * Register a plugin using a known unique key (e.g. myPlugin).
      *
      * @param \Swift_Events_EventListener $plugin
+     * @return void
      */
-    public function registerPlugin(\Swift_Events_EventListener $plugin);
+    public function registerPlugin(\Swift_Events_EventListener $plugin): void;
 
     /**
      * The Transport used to send messages.
      *
      * @return \Swift_Transport
      */
-    public function getTransport();
+    public function getTransport(): \Swift_Transport;
 
 }

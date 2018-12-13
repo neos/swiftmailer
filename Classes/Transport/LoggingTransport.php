@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Neos\SwiftMailer\Transport;
 
 /*
@@ -19,13 +22,12 @@ use Neos\SwiftMailer\TransportInterface;
  */
 class LoggingTransport implements TransportInterface
 {
-
     /**
      * Store sent messages for testing
      *
      * @var array
      */
-    static protected $deliveredMessages = array();
+    static protected $deliveredMessages = [];
 
     /**
      * @Flow\Inject
@@ -36,9 +38,9 @@ class LoggingTransport implements TransportInterface
     /**
      * The logging transport is always started
      *
-     * @return boolean Always TRUE for this transport
+     * @return bool Always true for this transport
      */
-    public function isStarted()
+    public function isStarted(): bool
     {
         return true;
     }
@@ -48,7 +50,7 @@ class LoggingTransport implements TransportInterface
      *
      * @return void
      */
-    public function start()
+    public function start(): void
     {
     }
 
@@ -57,7 +59,7 @@ class LoggingTransport implements TransportInterface
      *
      * @return void
      */
-    public function stop()
+    public function stop(): void
     {
     }
 
@@ -65,17 +67,17 @@ class LoggingTransport implements TransportInterface
      * "Send" the given Message. This transport will add it to a stored collection of sent messages
      * for testing purposes and log the message to the system logger.
      *
-     * @param \Swift_Mime_Message $message The message to send
+     * @param \Swift_Mime_SimpleMessage $message The message to send
      * @param array &$failedRecipients Failed recipients
-     * @return integer
+     * @return int
      */
-    public function send(\Swift_Mime_Message $message, &$failedRecipients = null)
+    public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null): int
     {
         self::$deliveredMessages[] = $message;
 
-        $this->systemLogger->log('Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()), LOG_DEBUG, array(
+        $this->systemLogger->log('Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()), LOG_DEBUG, [
             'message' => $message->toString()
-        ));
+        ]);
 
         return count((array)$message->getTo()) + count((array)$message->getCc()) + count((array)$message->getBcc());
     }
@@ -86,11 +88,11 @@ class LoggingTransport implements TransportInterface
      * @param array $addresses The addresses where the key is the email address and the value is a name
      * @return string Looking like "John Doe <demo@example.org>, Jeanne Dough <foo@example.org>, somebody@example.org"
      */
-    protected function buildStringFromEmailAndNameArray(array $addresses)
+    protected function buildStringFromEmailAndNameArray(array $addresses): string
     {
-        $results = array();
+        $results = [];
         foreach ($addresses as $emailAddress => $name) {
-            if (strlen($name) > 0) {
+            if ($name !== '') {
                 $results[] = sprintf('%s <%s>', $name, $emailAddress);
             } else {
                 $results[] = $emailAddress;
@@ -105,7 +107,7 @@ class LoggingTransport implements TransportInterface
      * @param \Swift_Events_EventListener $plugin
      * @return void
      */
-    public function registerPlugin(\Swift_Events_EventListener $plugin)
+    public function registerPlugin(\Swift_Events_EventListener $plugin): void
     {
     }
 
@@ -114,7 +116,7 @@ class LoggingTransport implements TransportInterface
      *
      * @return array
      */
-    static public function getDeliveredMessages()
+    public static function getDeliveredMessages(): array
     {
         return self::$deliveredMessages;
     }
@@ -124,9 +126,18 @@ class LoggingTransport implements TransportInterface
      *
      * @return void
      */
-    static public function reset()
+    public static function reset(): void
     {
-        self::$deliveredMessages = array();
+        self::$deliveredMessages = [];
     }
 
+    /**
+     * Check if this Transport mechanism is alive.
+     *
+     * @return bool Always true for this transport
+     */
+    public function ping(): bool
+    {
+        return true;
+    }
 }

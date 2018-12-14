@@ -80,7 +80,7 @@ class MboxTransport implements TransportInterface
 
         // Create a mbox-like header
         $mboxFrom = $this->getReversePath($message);
-        $mboxDate = strftime('%c', $message->getDate());
+        $mboxDate = strftime('%c', $message->getDate()->getTimestamp());
         $messageString = sprintf('From %s %s', $mboxFrom, $mboxDate) . chr(10);
 
         // Add the complete mail inclusive headers
@@ -100,18 +100,23 @@ class MboxTransport implements TransportInterface
      * @param \Swift_Mime_SimpleMessage $message
      * @return string|null
      */
-    private function getReversePath(\Swift_Mime_SimpleMessage $message): ?string
+    private function getReversePath(\Swift_Mime_SimpleMessage $message): string
     {
         $returnPath = $message->getReturnPath();
         $sender = $message->getSender();
         $from = $message->getFrom();
-        $path = null;
+        $path = '';
         if (!empty($returnPath)) {
             $path = $returnPath;
         } elseif (!empty($sender)) {
             $path = $sender;
         } elseif (!empty($from)) {
-            $path = $from;
+            if (is_array($from)) {
+                $keys = array_keys($from);
+                $path = array_shift($keys);
+            } else {
+                $path = $from;
+            }
         }
         return $path;
     }

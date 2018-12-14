@@ -42,12 +42,12 @@ interface MailerInterface
      * @param \Swift_Events_EventListener $plugin
      * @return void
      */
-    public function registerPlugin(\Swift_Events_EventListener $plugin): void;
+    public function registerPlugin(\Swift_Events_EventListener $plugin);
 
     /**
      * The Transport used to send messages.
      *
      * @return \Swift_Transport
      */
-    public function getTransport(): \Swift_Transport;
+    public function getTransport();
 }

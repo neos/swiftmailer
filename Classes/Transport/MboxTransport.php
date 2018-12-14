@@ -74,7 +74,7 @@ class MboxTransport implements TransportInterface
      * @param array &$failedRecipients Failed recipients (no failures in this transport)
      * @return int
      */
-    public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null): int
+    public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null)
     {
         $message->generateId();
 

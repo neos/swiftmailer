@@ -14,6 +14,6 @@ namespace Neos\SwiftMailer;
 /**
  * Mailer class for the SwiftMailer package
  */
-class Mailer extends \Swift_Mailer implements \Neos\SwiftMailer\MailerInterface
+class Mailer extends \Swift_Mailer implements MailerInterface
 {
 }

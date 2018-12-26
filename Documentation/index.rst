@@ -56,17 +56,17 @@ Here is an example:
 
 .. code-block:: php
 
-  	$mail = new \Neos\SwiftMailer\Message();
+  $mail = new \Neos\SwiftMailer\Message();
 
-  	$mail
-  		->setFrom(array($senderAddress => $senderName))
-  		->setTo(array($recipientAddress => $recipientName))
-  		->setSubject($subject);
+  $mail
+      ->setFrom(array($senderAddress => $senderName))
+      ->setTo(array($recipientAddress => $recipientName))
+      ->setSubject($subject);
 
-  	$mail->setBody($message, 'text/html');
-  	$mail->setBody($message, 'text/plain');
+  $mail->setBody($message, 'text/html');
+  $mail->setBody($message, 'text/plain');
 
-  	$mail->send();
+  $mail->send();
 
 
 Debugging sent mail

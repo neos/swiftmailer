@@ -6,8 +6,8 @@
         "MIT"
     ],
     "require": {
-        "neos/flow": ">=4.0 <6.0 || dev-master",
-        "swiftmailer/swiftmailer": "~5.4.5"
+        "neos/flow": "^4.0 || ^5.0 || dev-master",
+        "swiftmailer/swiftmailer": "^6.0"
     },
     "autoload": {
         "psr-4": {
@@ -16,7 +16,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "6.0.x-dev"
+            "dev-master": "7.0.x-dev"
         },
         "applied-flow-migrations": [
             "TYPO3.Flow-201209251426",

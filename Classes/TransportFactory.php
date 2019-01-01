@@ -27,11 +27,11 @@ class TransportFactory
      * @param string $transportType Object name of the transport to create
      * @param array $transportOptions Options for the transport
      * @param array $transportArguments Constructor arguments for the transport
-     * @return TransportInterface The created transport instance
+     * @return \Swift_Transport The created transport instance
      * @throws Exception
      * @throws \ReflectionException
      */
-    public function create(string $transportType, array $transportOptions = [], array $transportArguments = null): TransportInterface
+    public function create(string $transportType, array $transportOptions = [], array $transportArguments = null): \Swift_Transport
     {
         if (!class_exists($transportType)) {
             throw new Exception(sprintf('The specified transport backend "%s" does not exist.', $transportType), 1269351207);
@@ -44,7 +44,7 @@ class TransportFactory
             $transport = new $transportType();
         }
 
-        if ($transport instanceof TransportInterface) {
+        if ($transport instanceof \Swift_Transport) {
             foreach ($transportOptions as $optionName => $optionValue) {
                 if (ObjectAccess::isPropertySettable($transport, $optionName)) {
                     ObjectAccess::setProperty($transport, $optionName, $optionValue);
@@ -54,6 +54,6 @@ class TransportFactory
             return $transport;
         }
 
-        throw new Exception(sprintf('The specified transport backend "%s" does not implement %s.', $transportType, TransportInterface::class), 1544727431);
+        throw new Exception(sprintf('The specified transport backend "%s" does not implement %s.', $transportType, \Swift_Transport::class), 1544727431);
     }
 }

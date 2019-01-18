@@ -16,8 +16,19 @@ Configuration
 -------------
 
 To set up the mail transport to be used, adjust the settings as needed. Without any further
-configuration, mails will be sent using ``Swift_MailTransport`` which uses the PHP ``mail()``
-function. To use SMTP for sending, follow the following example:
+configuration, mails will be sent using ``Swift_SendmailTransport`` which uses ``sendmail``
+on the server. To adjust the sendmail command, you can use:
+
+.. code-block:: yaml
+
+  Neos:
+    SwiftMailer:
+      transport:
+        type: 'Swift_SendmailTransport'
+        options:
+          command: '/usr/sbin/sendmail -bs'
+
+To use SMTP for sending, follow the following example:
 
 .. code-block:: yaml
 
@@ -38,6 +49,10 @@ The encryption property supports values ``ssl`` and ``tls``.
 Further transports are available with Swift Mailer and can be used as well. Their options can
 be looked up the Swift Mailer documentation and they can be set by extrapolating from their
 setter method names (as in: ``setUsername()`` becomes ``username`` in the options.)
+
+The ``Swift_MailTransport`` that was available in the past has been removed with the Swift
+Mailer library 6.0 release, see https://github.com/swiftmailer/swiftmailer/issues/866 for
+background information.
 
 Sending mail
 ------------

@@ -1,7 +1,7 @@
 Neos:
   SwiftMailer:
     transport:
-      type: 'Swift_MailTransport'
+      type: 'Swift_SendmailTransport'
       arguments: ~
       options: []
 
@@ -27,3 +27,8 @@ Neos:
 #     options:
 #       mboxPathAndFilename: '%FLOW_PATH_DATA%/Persistent/sent-mail'
 
+# Example settings for "sending" emails to the logs:
+#
+# SwiftMailer:
+#   transport:
+#     type: 'Neos\SwiftMailer\Transport\LoggingTransport'

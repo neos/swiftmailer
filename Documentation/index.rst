@@ -78,8 +78,8 @@ Here is an example:
       ->setTo(array($recipientAddress => $recipientName))
       ->setSubject($subject);
 
-  $mail->setBody($message, 'text/html');
-  $mail->setBody($message, 'text/plain');
+  $mail->setBody($messageTxt, 'text/plain');
+  $mail->addPart($messageHtml, 'text/html');
 
   $mail->send();
 

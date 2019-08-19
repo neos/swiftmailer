@@ -15,7 +15,9 @@ namespace Neos\SwiftMailer\Transport;
  */
 
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Log\Utility\LogEnvironment;
 use Neos\SwiftMailer\TransportInterface;
+use Psr\Log\LoggerInterface;
 
 /**
  * A logging swift transport for functional tests and development. It stores and logs sent messages.
@@ -31,7 +33,7 @@ class LoggingTransport implements TransportInterface
 
     /**
      * @Flow\Inject
-     * @var \Neos\Flow\Log\SystemLoggerInterface
+     * @var LoggerInterface
      */
     protected $systemLogger;
 
@@ -75,9 +77,9 @@ class LoggingTransport implements TransportInterface
     {
         self::$deliveredMessages[] = $message;
 
-        $this->systemLogger->log('Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()), LOG_DEBUG, [
-            'message' => $message->toString()
-        ]);
+        $this->systemLogger->debug('Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()),
+            array_merge(LogEnvironment::fromMethodName(__METHOD__), ['message' => $message->toString()])
+        );
 
         return count((array)$message->getTo()) + count((array)$message->getCc()) + count((array)$message->getBcc());
     }

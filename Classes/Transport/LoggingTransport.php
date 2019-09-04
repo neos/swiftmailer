@@ -35,7 +35,7 @@ class LoggingTransport implements TransportInterface
      * @Flow\Inject
      * @var LoggerInterface
      */
-    protected $systemLogger;
+    protected $logger;
 
     /**
      * The logging transport is always started
@@ -77,7 +77,7 @@ class LoggingTransport implements TransportInterface
     {
         self::$deliveredMessages[] = $message;
 
-        $this->systemLogger->debug('Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()),
+        $this->logger->debug('Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()),
             array_merge(LogEnvironment::fromMethodName(__METHOD__), ['message' => $message->toString()])
         );
 

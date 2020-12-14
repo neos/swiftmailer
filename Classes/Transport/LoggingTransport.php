@@ -77,7 +77,8 @@ class LoggingTransport implements TransportInterface
     {
         self::$deliveredMessages[] = $message;
 
-        $this->logger->debug('Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()),
+        $this->logger->debug(
+            'Sent email to ' . $this->buildStringFromEmailAndNameArray($message->getTo()),
             array_merge(LogEnvironment::fromMethodName(__METHOD__), ['message' => $message->toString()])
         );
 

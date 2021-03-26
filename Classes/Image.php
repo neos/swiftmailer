@@ -16,7 +16,7 @@ namespace Neos\SwiftMailer;
 use Neos\Flow\Annotations as Flow;
 
 /**
- * Message class for the SwiftMailer package
+ * Image class for the SwiftMailer package
  *
  * @Flow\Scope("prototype")
  */

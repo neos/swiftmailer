@@ -24,10 +24,6 @@ class TransportFactory
     /**
      * Factory method which creates the specified transport with the given options.
      *
-     * @param string $transportType Object name of the transport to create
-     * @param array $transportOptions Options for the transport
-     * @param array $transportArguments Constructor arguments for the transport
-     * @return \Swift_Transport The created transport instance
      * @throws Exception
      * @throws \ReflectionException
      */

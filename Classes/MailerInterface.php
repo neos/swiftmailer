@@ -29,25 +29,16 @@ interface MailerInterface
      *
      * The return value is the number of recipients who were accepted for
      * delivery.
-     *
-     * @param \Swift_Mime_SimpleMessage $message
-     * @param array $failedRecipients An array of failures by-reference
-     * @return int
      */
     public function send(\Swift_Mime_SimpleMessage $message, array &$failedRecipients = null);
 
     /**
      * Register a plugin using a known unique key (e.g. myPlugin).
-     *
-     * @param \Swift_Events_EventListener $plugin
-     * @return void
      */
     public function registerPlugin(\Swift_Events_EventListener $plugin);
 
     /**
      * The Transport used to send messages.
-     *
-     * @return \Swift_Transport
      */
     public function getTransport();
 }

@@ -25,21 +25,16 @@ class Message extends \Swift_Message
 {
     /**
      * @Flow\Inject
-     * @var \Neos\SwiftMailer\MailerInterface
      */
     protected MailerInterface $mailer;
 
     /**
      * True if the message has been sent.
-     *
-     * @var bool
      */
     protected bool $sent = false;
 
     /**
      * Holds the failed recipients after the message has been sent
-     *
-     * @var array
      */
     protected array $failedRecipients = [];
 
@@ -57,8 +52,6 @@ class Message extends \Swift_Message
 
     /**
      * Checks whether the message has been sent.
-     *
-     * @return bool
      */
     public function isSent(): bool
     {
@@ -67,8 +60,6 @@ class Message extends \Swift_Message
 
     /**
      * Returns the recipients for which the mail was not accepted for delivery.
-     *
-     * @return array the recipients who were not accepted for delivery
      */
     public function getFailedRecipients(): array
     {

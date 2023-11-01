@@ -26,21 +26,16 @@ class LoggingTransport implements TransportInterface
 {
     /**
      * Store sent messages for testing
-     *
-     * @var array
      */
     protected static array $deliveredMessages = [];
 
     /**
      * @Flow\Inject
-     * @var LoggerInterface
      */
     protected LoggerInterface $logger;
 
     /**
      * The logging transport is always started
-     *
-     * @return bool Always true for this transport
      */
     public function isStarted(): bool
     {
@@ -49,8 +44,6 @@ class LoggingTransport implements TransportInterface
 
     /**
      * No op
-     *
-     * @return void
      */
     public function start(): void
     {
@@ -58,8 +51,6 @@ class LoggingTransport implements TransportInterface
 
     /**
      * No op
-     *
-     * @return void
      */
     public function stop(): void
     {
@@ -68,10 +59,6 @@ class LoggingTransport implements TransportInterface
     /**
      * "Send" the given Message. This transport will add it to a stored collection of sent messages
      * for testing purposes and log the message to the system logger.
-     *
-     * @param \Swift_Mime_SimpleMessage $message The message to send
-     * @param array &$failedRecipients Failed recipients
-     * @return int
      */
     public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null): int
     {
@@ -106,9 +93,6 @@ class LoggingTransport implements TransportInterface
 
     /**
      * No op
-     *
-     * @param \Swift_Events_EventListener $plugin
-     * @return void
      */
     public function registerPlugin(\Swift_Events_EventListener $plugin): void
     {
@@ -116,8 +100,6 @@ class LoggingTransport implements TransportInterface
 
     /**
      * Get delivered messages that were sent through this transport
-     *
-     * @return array
      */
     public static function getDeliveredMessages(): array
     {
@@ -126,8 +108,6 @@ class LoggingTransport implements TransportInterface
 
     /**
      * Reset the delivered messages (e.g. for tearDown in functional test)
-     *
-     * @return void
      */
     public static function reset(): void
     {
@@ -135,9 +115,7 @@ class LoggingTransport implements TransportInterface
     }
 
     /**
-     * Check if this Transport mechanism is alive.
-     *
-     * @return bool Always true for this transport
+     * This Transport mechanism is always alive.
      */
     public function ping(): bool
     {

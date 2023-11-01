@@ -25,7 +25,7 @@ class EmailCommandController extends CommandController
      * @param string $to The to address of the message
      * @param string $subject The subject of the message
      * @param string $body The body of the message
-     * @param string $contentType The body content type of the message (Default: test/plain)
+     * @param string $contentType The body content type of the message (Default: text/plain)
      * @param string $charset The body charset of the message (Default: UTF8)
      */
     public function sendCommand(string $from, string $to, string $subject, string $body = '', string $contentType = 'text/plain', string $charset = 'UTF8'): void

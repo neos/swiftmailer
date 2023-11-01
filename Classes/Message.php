@@ -27,21 +27,21 @@ class Message extends \Swift_Message
      * @Flow\Inject
      * @var \Neos\SwiftMailer\MailerInterface
      */
-    protected $mailer;
+    protected MailerInterface $mailer;
 
     /**
      * True if the message has been sent.
      *
      * @var bool
      */
-    protected $sent = false;
+    protected bool $sent = false;
 
     /**
      * Holds the failed recipients after the message has been sent
      *
      * @var array
      */
-    protected $failedRecipients = [];
+    protected array $failedRecipients = [];
 
     /**
      * Sends the message.

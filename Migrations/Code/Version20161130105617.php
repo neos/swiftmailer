@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Neos\Flow\Core\Migrations;
 
@@ -17,7 +18,7 @@ namespace Neos\Flow\Core\Migrations;
  */
 class Version20161130105617 extends AbstractMigration
 {
-    public function getIdentifier()
+    public function getIdentifier(): string
     {
         return 'Neos.SwiftMailer-20161130105617';
     }
@@ -25,7 +26,7 @@ class Version20161130105617 extends AbstractMigration
     /**
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         $this->searchAndReplace('TYPO3\SwiftMailer', 'Neos\SwiftMailer');
         $this->searchAndReplace('TYPO3.SwiftMailer', 'Neos.SwiftMailer');

@@ -29,13 +29,13 @@ class LoggingTransport implements TransportInterface
      *
      * @var array
      */
-    protected static $deliveredMessages = [];
+    protected static array $deliveredMessages = [];
 
     /**
      * @Flow\Inject
      * @var LoggerInterface
      */
-    protected $logger;
+    protected LoggerInterface $logger;
 
     /**
      * The logging transport is always started

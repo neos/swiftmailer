@@ -34,7 +34,7 @@ interface MailerInterface
      * @param array $failedRecipients An array of failures by-reference
      * @return int
      */
-    public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null);
+    public function send(\Swift_Mime_SimpleMessage $message, array &$failedRecipients = null);
 
     /**
      * Register a plugin using a known unique key (e.g. myPlugin).

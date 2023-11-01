@@ -28,7 +28,7 @@ class EmailCommandController extends CommandController
      * @param string $contentType The body content type of the message (Default: test/plain)
      * @param string $charset The body charset of the message (Default: UTF8)
      */
-    public function sendCommand(string $from, string $to, string $subject, string $body = '', string $contentType = 'text/plain', $charset = 'UTF8'): void
+    public function sendCommand(string $from, string $to, string $subject, string $body = '', string $contentType = 'text/plain', string $charset = 'UTF8'): void
     {
         $message = (new Message())
             ->setFrom($from)

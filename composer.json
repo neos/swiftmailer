@@ -6,7 +6,7 @@
         "MIT"
     ],
     "require": {
-        "neos/flow": "^5.2 || ^6.0 || ^7.0 || ^8.0 ||dev-master",
+        "neos/flow": "^7.3 || ^8.0 || ^9.0 || dev-main",
         "swiftmailer/swiftmailer": "^6.0"
     },
     "autoload": {

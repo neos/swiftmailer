@@ -24,22 +24,18 @@ class TransportFactory
     /**
      * Factory method which creates the specified transport with the given options.
      *
-     * @param string $transportType Object name of the transport to create
-     * @param array $transportOptions Options for the transport
-     * @param array $transportArguments Constructor arguments for the transport
-     * @return \Swift_Transport The created transport instance
      * @throws Exception
      * @throws \ReflectionException
      */
-    public function create(string $transportType, array $transportOptions = [], array $transportArguments = null): \Swift_Transport
+    public function create(string $transportType, array $transportOptions = [], array $transportConstructorArguments = null): \Swift_Transport
     {
         if (!class_exists($transportType)) {
             throw new Exception(sprintf('The specified transport backend "%s" does not exist.', $transportType), 1269351207);
         }
 
-        if (is_array($transportArguments)) {
+        if (is_array($transportConstructorArguments)) {
             $class = new \ReflectionClass($transportType);
-            $transport = $class->newInstanceArgs($transportArguments);
+            $transport = $class->newInstanceArgs($transportConstructorArguments);
         } else {
             $transport = new $transportType();
         }

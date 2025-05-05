@@ -24,15 +24,12 @@ use Neos\SwiftMailer\TransportInterface;
 class MboxTransport implements TransportInterface
 {
     /**
-     * @var string The file to write the mails into
+     * The file to write the mails into
      */
-    protected $mboxPathAndFilename;
+    protected string $mboxPathAndFilename;
 
     /**
      * Set path and filename of mbox file to use.
-     *
-     * @param string $mboxPathAndFilename
-     * @return void
      */
     public function setMboxPathAndFilename(string $mboxPathAndFilename): void
     {
@@ -41,8 +38,6 @@ class MboxTransport implements TransportInterface
 
     /**
      * The mbox transport is always started
-     *
-     * @return boolean Always TRUE for this transport
      */
     public function isStarted(): bool
     {
@@ -51,8 +46,6 @@ class MboxTransport implements TransportInterface
 
     /**
      * No op
-     *
-     * @return void
      */
     public function start(): void
     {
@@ -60,8 +53,6 @@ class MboxTransport implements TransportInterface
 
     /**
      * No op
-     *
-     * @return void
      */
     public function stop(): void
     {
@@ -69,12 +60,8 @@ class MboxTransport implements TransportInterface
 
     /**
      * Outputs the mail to a text file according to RFC 4155.
-     *
-     * @param \Swift_Mime_SimpleMessage $message The message to send
-     * @param array &$failedRecipients Failed recipients (no failures in this transport)
-     * @return int
      */
-    public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null)
+    public function send(\Swift_Mime_SimpleMessage $message, &$failedRecipients = null): int
     {
         $message->generateId();
 
@@ -96,9 +83,6 @@ class MboxTransport implements TransportInterface
 
     /**
      * Determine the best-use reverse path for this message
-     *
-     * @param \Swift_Mime_SimpleMessage $message
-     * @return string|null
      */
     private function getReversePath(\Swift_Mime_SimpleMessage $message): string
     {
@@ -123,18 +107,13 @@ class MboxTransport implements TransportInterface
 
     /**
      * No op
-     *
-     * @param \Swift_Events_EventListener $plugin
-     * @return void
      */
     public function registerPlugin(\Swift_Events_EventListener $plugin): void
     {
     }
 
     /**
-     * Check if this Transport mechanism is alive.
-     *
-     * @return bool Always true for this transport
+     * This Transport mechanism is always alive.
      */
     public function ping(): bool
     {

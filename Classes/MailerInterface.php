@@ -30,7 +30,7 @@ interface MailerInterface
      * The return value is the number of recipients who were accepted for
      * delivery.
      */
-    public function send(\Swift_Mime_SimpleMessage $message, array &$failedRecipients = null);
+    public function send(\Swift_Mime_SimpleMessage $message, ?array &$failedRecipients = null);
 
     /**
      * Register a plugin using a known unique key (e.g. myPlugin).

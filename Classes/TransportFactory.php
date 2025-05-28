@@ -27,7 +27,7 @@ class TransportFactory
      * @throws Exception
      * @throws \ReflectionException
      */
-    public function create(string $transportType, array $transportOptions = [], array $transportConstructorArguments = null): \Swift_Transport
+    public function create(string $transportType, array $transportOptions = [], ?array $transportConstructorArguments = null): \Swift_Transport
     {
         if (!class_exists($transportType)) {
             throw new Exception(sprintf('The specified transport backend "%s" does not exist.', $transportType), 1269351207);
